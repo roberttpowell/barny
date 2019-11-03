@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+@import
+	url('https://fonts.googleapis.com/css?family=Miriam+Libre&display=swap')
+	;
+</style>
+
+<title>Bacaro Grats Manager</title>
+
+<meta charset="UTF-8">
+
+
+
+</head>
+<body>
+	<img src="logo.png" class="logo" />
+	<H2>Grats spreadsheet printing tool</H2>
+	<div class="text">Drop a spreadsheet from the accountant in the
+		box below</div>
+	<div class="dropZone"></div>
+	<div class="hidden" style="display:none"">
+		<form method="post" action="./calculate" enctype="multipart/form-data" id="postForm">
+			<input type="file" id="fileInput" name="file"/>
+			<input type="submit" value="submit" id="submit" />
+		</form>
+	</div>
+
+
+	<script type="text/javascript" language="javascript">
+	
+		var dropZone = document.querySelector(".dropZone");
+		var input = document.getElementById("fileInput")
+		// var form = document.getElementById('postForm')
+		
+		console.log('running script to configure dropzone '+dropZone)
+
+		// we need to disable the default dragover behaviour of the browser otherwise it will intercept the drop and do goofy things
+		dropZone.addEventListener("dragover", function(event) {
+			event.preventDefault();
+
+		});
+		dropZone.addEventListener("drop", function(event) {
+			// function called when a drop action takes place
+			event.preventDefault() // stop the browser handling the drop
+
+			var items = event.dataTransfer.files;
+			input.files = items
+			var submit = document.getElementById('submit')
+			submit.click()
+
+		});
+	</script>
+
+</body>
+</html>

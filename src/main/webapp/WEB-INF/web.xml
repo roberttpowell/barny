@@ -1,0 +1,39 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Bacaro Grats Calculator</display-name>
+
+	<servlet>
+		<servlet-name>GratsServlet</servlet-name>
+		<servlet-class>com.tiggit.bacaro.GratsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LayoutServlet</servlet-name>
+		<servlet-class>com.tiggit.bacaro.LayoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>velocityLayout</servlet-name>
+		<servlet-class>org.apache.velocity.tools.view.VelocityLayoutServlet</servlet-class>
+
+		<init-param>
+			<param-name>org.apache.velocity.properties</param-name>
+			<param-value>/WEB-INF/velocity.properties</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>velocityLayout</servlet-name>
+		<url-pattern>*.vm</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>LayoutServlet</servlet-name>
+        <url-pattern>/layout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+		<servlet-name>GratsServlet</servlet-name>
+		<url-pattern>/calculate</url-pattern>
+	</servlet-mapping>
+
+</web-app>

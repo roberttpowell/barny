@@ -1,0 +1,63 @@
+
+body {
+	font-family: 'Miriam Libre', sans-serif;
+	font-size: 20px;
+}
+
+
+div {
+	font-family: 'Miriam Libre', sans-serif;
+	font-size: 20px;
+}
+
+img {
+	margin:30px;
+}
+
+h2 {
+	text-align:center;
+	margin:30px;
+}
+
+.text{
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align:center;
+}
+
+.dropZone {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	width:50%;
+	height:200px;
+	border:dashed 5px grey;
+	border-radius:15px;
+}
+
+.earningsTable th{
+	width:150px;
+}
+
+.earningsTable td{
+	text-align:center;
+}
+
+.employeeInset{
+	margin-left:20%;
+}
+
+.employeePage {
+	border: 1px solid;
+    padding: 15px;
+    margin: 10px;
+}
+
+@media print {
+	.employeePage{
+		page-break-after:always;
+	}
+}
+
