@@ -66,7 +66,6 @@ public class GratsServlet extends VelocityLayoutServlet {
 			try {
 				template = getTemplate("templates/payments.vm");
 
-				response.setHeader("Template Returned", "Success");
 			} catch (Exception e) {
 				logger.error("Error while reading the template ", e);
 			}
