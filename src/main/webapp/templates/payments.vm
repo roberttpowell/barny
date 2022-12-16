@@ -1,19 +1,25 @@
     
     #foreach( $payment in $payments )
     <div class="employeePage">
-    	<img src="/bacaro/logo.png" class="logo" style="position:absolute">
+    	<img src="logo.png" class="logo" style="position:absolute">
     	<div class="employeeInset" style="margin-left:20%">
-    	<h3>$payment.getFirstName() $payment.getLastName()</h3>
+    	<h3>$payment.getName()</h3>
     	<br />
-    	<table class="earningsTable">
-    		<tr><th>Work date</th><th>Earnings Share</th></tr>
-    		#foreach($earning in $payment.getEarnings())
-    			<tr>
-    			<td style="text-align:center">$date.format('dd MMM yyyy', $earning.getEarningDate())</td>
-    			<td style="text-align:right">$number.format('$#,##0.00', $earning.getEarningAmount())</td>
-    			</tr>
-    		#end
-    	</table>
+    	<div>Shifts Worked
+        #if($payment.getShiftsWorked()) 
+    		$number.format('$#,##0.00',$payment.getShiftsWorked())
+    	#end
+        </div><br />
+        <div>Total Grats Points
+        #if($payment.getGratsPoints()) 
+    		$number.format('$#,##0.00',$payment.getGratsPoints())
+    	#end
+        </div> <br />
+        <div>Share of Grats
+        #if($payment.getShare()) 
+    		$number.format('$#,##0.00',$payment.getShare())
+    	#end
+        </div><br />
     	<br />
     	<div>Employee pension contribution 
     	#if($payment.getPensionEmployee()) 
@@ -34,7 +40,7 @@
     	<div class="copyright" style="font-size:8px">
     		
 			<center>
-   				Processing software copyright Tiggit Software Ltd., 2019. All rights reserved.
+   				Processing software copyright Tiggit Software Ltd., 2022. All rights reserved.
    			</center>
    			
 		</div>

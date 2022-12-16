@@ -4,89 +4,95 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StaffPayment {
-	
-	private String firstName;
-	
-	private String lastName;
-	
-	private String hourRate;
-	
-	private List<DateEarning> earnings = new ArrayList<>();
-	
-	private Double netPay;
-	
-	private Double pensionEmployee;
-	
-	private Double pensionEmployer;
-	
-	private int columnAddress;
 
-	public String getFirstName() {
-		return firstName;
-	}
+    private String name;
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    private Double hourRate;
 
-	public String getLastName() {
-		return lastName;
-	}
+    private Integer points;
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    private Double shiftsWorked;
 
-	public String getHourRate() {
-		return hourRate;
-	}
+    private Double gratsPoints;
 
-	public void setHourRate(String hourRate) {
-		this.hourRate = hourRate;
-	}
+    private Double share;
 
-	public List<DateEarning> getEarnings() {
-		return earnings;
-	}
+    private Double netPay;
 
-	public void setEarnings(List<DateEarning> earnings) {
-		this.earnings = earnings;
-	}
+    private Double pensionEmployee;
 
-	public Double getNetPay() {
-		return netPay;
-	}
+    private Double pensionEmployer;
 
-	public void setNetPay(Double netPay) {
-		this.netPay = netPay;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Double getPensionEmployee() {
-		return pensionEmployee;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setPensionEmployee(Double pensionEmployee) {
-		this.pensionEmployee = pensionEmployee;
-	}
+    public Double getHourRate() {
+        return hourRate;
+    }
 
-	public Double getPensionEmployer() {
-		return pensionEmployer;
-	}
+    public void setHourRate(Double hourRate) {
+        this.hourRate = hourRate;
+    }
 
-	public void setPensionEmployer(Double pensionEmployer) {
-		this.pensionEmployer = pensionEmployer;
-	}
+    public Double getNetPay() {
+        return netPay;
+    }
 
-	public int getColumnAddress() {
-		return columnAddress;
-	}
+    public void setNetPay(Double netPay) {
+        this.netPay = netPay;
+    }
 
-	public void setColumnAddress(int columnAddress) {
-		this.columnAddress = columnAddress;
-	}
-	
-	
-	
-	
+    public Double getPensionEmployee() {
+        return pensionEmployee;
+    }
+
+    public void setPensionEmployee(Double pensionEmployee) {
+        this.pensionEmployee = pensionEmployee;
+    }
+
+    public Double getPensionEmployer() {
+        return pensionEmployer;
+    }
+
+    public void setPensionEmployer(Double pensionEmployer) {
+        this.pensionEmployer = pensionEmployer;
+    }
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
+
+    public Double getShiftsWorked() {
+        return shiftsWorked;
+    }
+
+    public void setShiftsWorked(Double shiftsWorked) {
+        this.shiftsWorked = shiftsWorked;
+    }
+
+    public Double getGratsPoints() {
+        return gratsPoints;
+    }
+
+    public void setGratsPoints(Double gratsPoints) {
+        this.gratsPoints = gratsPoints;
+    }
+
+    public Double getShare() {
+        return share;
+    }
+
+    public void setShare(Double share) {
+        this.share = share;
+    }
 
 }
