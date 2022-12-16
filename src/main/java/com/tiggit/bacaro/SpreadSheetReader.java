@@ -4,16 +4,12 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.compress.utils.IOUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.CellValue;
-import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -84,7 +80,8 @@ public class SpreadSheetReader {
 
             // rows that have a text cell at zero are candidates
             // and that have a payout value
-            if (cell.getCellType() == CellType.STRING) {
+            if (cell != null && cell.getCellType() == CellType.STRING) {
+                System.out.println("Processing "+cell.getStringCellValue());
                 Cell paymentCell = row.getCell(8);
                 if (paymentCell.getCellType() == CellType.FORMULA) {
                     // this is a candidate row
