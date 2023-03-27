@@ -10,7 +10,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<itext.version>5.4.5</itext.version>
+		<itext.version>5.5.13.3</itext.version>
 	 <maven.compiler.source>1.8</maven.compiler.source>
 	 <maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
