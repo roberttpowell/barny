@@ -18,12 +18,10 @@ import org.apache.velocity.tools.view.VelocityLayoutServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 @MultipartConfig
 public class GratsServlet extends VelocityLayoutServlet {
-	
-	
-	/*
+
+    /*
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
@@ -40,47 +38,45 @@ public class GratsServlet extends VelocityLayoutServlet {
 		response.getOutputStream().write("OK".getBytes());
 	}
 	
-	*/
-	
-	
-	@Override
-	public Template handleRequest(HttpServletRequest request, HttpServletResponse response, Context context) {
+     */
+    @Override
+    public Template handleRequest(HttpServletRequest request, HttpServletResponse response, Context context) {
 
-        Logger logger= LoggerFactory.getLogger(LayoutServlet.class);
-        
-		InputStream in;
-		try {
-			
-			Part filePart = request.getPart("file");
-			in = filePart.getInputStream();
+        Logger logger = LoggerFactory.getLogger(LayoutServlet.class);
 
-			SpreadSheetReader reader = new SpreadSheetReader();
-			List<StaffPayment> payments = reader.read(in);
+        InputStream in;
+        try {
 
-			context.put("payments", payments);
-			context.put("date", new DateTool());
-			context.put("number", new NumberTool());
+            Part filePart = request.getPart("file");
+            in = filePart.getInputStream();
 
-			Template template = null;
+            SpreadSheetReader reader = new SpreadSheetReader();
+            List<StaffPayment> payments = reader.read(in);
 
-			try {
-				template = getTemplate("templates/payments.vm");
+            context.put("payments", payments);
+            context.put("date", new DateTool());
+            context.put("number", new NumberTool());
 
-			} catch (Exception e) {
-				logger.error("Error while reading the template ", e);
-			}
+            Template template = null;
 
-			return template;
+            try {
+                template = getTemplate("templates/payments.vm");
 
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-			
-			Template errorTemplate = null;
-			
-			return errorTemplate;
-		} 
+            } catch (Exception e) {
+                logger.error("Error while reading the template ", e);
+            }
 
-	}
+            return template;
+
+        } catch (Exception e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+
+            Template errorTemplate = null;
+
+            return errorTemplate;
+        }
+
+    }
 
 }

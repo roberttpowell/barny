@@ -17,16 +17,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class SpreadSheetReader {
 
-    private static final String hourlyRateMatch = "Rate CI$";
-
-    private static final String firstNameMatch = "DATE";
-
-    private static final String pensionEmployeeMatch = "Pension Employee";
-
-    private static final String pensionEmployerMatch = "Pension Employer";
-
-    private static final String netPayMatch = "NET PAY";
-
     public SpreadSheetReader() {
 
     }
