@@ -1,0 +1,51 @@
+    
+    #foreach( $payment in $payments )
+    <div class="employeePage">
+    	<img src="logo.png" class="logo" style="position:absolute">
+    	<div class="employeeInset" style="margin-left:20%">
+    	<h3>$payment.getName()</h3>
+    	<br />
+    	<div>Shifts Worked
+        #if($payment.getShiftsWorked()) 
+    		$number.format('$#,##0.00',$payment.getShiftsWorked())
+    	#end
+        </div><br />
+        <div>Total Grats Points
+        #if($payment.getGratsPoints()) 
+    		$number.format('$#,##0.00',$payment.getGratsPoints())
+    	#end
+        </div> <br />
+        <div>Share of Grats
+        #if($payment.getShare()) 
+    		$number.format('$#,##0.00',$payment.getShare())
+    	#end
+        </div><br />
+    	<br />
+    	<div>Employee pension contribution 
+    	#if($payment.getPensionEmployee()) 
+    		$number.format('$#,##0.00',$payment.getPensionEmployee())
+    	#end
+    	</div><br />
+    	<div>Employer pension contribution 
+    	#if($payment.getPensionEmployer()) 
+    		$number.format('$#,##0.00',$payment.getPensionEmployer())
+    	#end</div><br />
+    	<br />
+    	<b><div>Net Pay 
+    	#if($payment.getNetPay()) 
+    		$number.format('$#,##0.00',$payment.getNetPay())
+    	#end
+    	</div></b><br />
+    	</div>
+    	<div class="copyright" style="font-size:8px">
+    		
+			<center>
+   				Processing software copyright Tiggit Software Ltd., 2022-2025. All rights reserved.
+   			</center>
+   			
+		</div>
+    </div>
+    #end
+    
+    
+    <BR/>
